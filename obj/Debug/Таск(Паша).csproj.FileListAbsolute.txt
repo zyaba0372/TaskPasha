@@ -1,0 +1,7 @@
+F:\C# praktik\Таск(Паша)\Таск(Паша)\bin\Debug\Таск(Паша).exe.config
+F:\C# praktik\Таск(Паша)\Таск(Паша)\bin\Debug\Таск(Паша).exe
+F:\C# praktik\Таск(Паша)\Таск(Паша)\bin\Debug\Таск(Паша).pdb
+F:\C# praktik\Таск(Паша)\Таск(Паша)\obj\Debug\Таск(Паша).csprojAssemblyReference.cache
+F:\C# praktik\Таск(Паша)\Таск(Паша)\obj\Debug\Таск(Паша).csproj.CoreCompileInputs.cache
+F:\C# praktik\Таск(Паша)\Таск(Паша)\obj\Debug\Таск(Паша).exe
+F:\C# praktik\Таск(Паша)\Таск(Паша)\obj\Debug\Таск(Паша).pdb
