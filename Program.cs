@@ -18,15 +18,15 @@ namespace Таск_Паша_
             Console.Write("j = ");
             int b = Convert.ToInt32(Console.ReadLine());
            
-            Console.WriteLine();            
-
+            Console.WriteLine();
+            int c = 10;
             //Matrix fill:
             int[,] Array = new int[a,b];
             for (int i = 0; i < a; i++)
             {
                 for (int j = 0; j < b; j++)
                 {
-                    Array[i,j] = 0;
+                    Array[i,j] = c++;
                 }                
             }
 
@@ -73,29 +73,29 @@ namespace Таск_Паша_
             //Matrix - Delete row and column:
             Console.WriteLine("Which row and column to delete?");
             Console.Write("Row selection: ");
-            int c1 = Convert.ToInt32(Console.ReadLine());
+            int row = Convert.ToInt32(Console.ReadLine());
             Console.Write("Column selection: ");
-            int c2 = Convert.ToInt32(Console.ReadLine());
+            int column = Convert.ToInt32(Console.ReadLine());
+            
 
-            int[,] ArrayDel = new int[a - 1, b - 1];
-
-            for (int i = 0; i < a - 1; i++)
-            {                
-                for (int j = 0; j < b - 1; j++)
+            for (int i = 0; i < a ; i++)
+            {     
+                if (i==row)
                 {
-                    if (i == c1)
+                    i++;
+                }
+                for (int j = 0; j < b ; j++)
+                {                    
+                                  
+                    if (j == column)
                     {
-                        ArrayDel[i, j] = Array[i + 1,j];
+                        j++;
                     }                    
-                    if (j == c2)
-                    {
-                        ArrayDel[i, j] = Array[i, j + 1];
-                    }                    
-                    Console.Write($" {ArrayDel[i, j]} ");
+                    Console.Write($" {Array[i, j]} ");                    
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine("---------------Random--------------");
+            Console.WriteLine("---------------Random (10-90)--------------");
             //Matrix - Random values:
             
             
