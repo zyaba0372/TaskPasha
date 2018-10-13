@@ -51,12 +51,12 @@ namespace Таск_Паша_
                 {
                     if (i == 0)
                     {
-                        Console.Write(" 1 ");
+                        Console.Write("  1 ");
                     }   
                     
                     else if (j == 0)
                     {
-                        Console.Write(" 1 ");
+                        Console.Write("  1 ");
                     }
 
                     else
@@ -75,8 +75,7 @@ namespace Таск_Паша_
             Console.Write("Row selection: ");
             int row = Convert.ToInt32(Console.ReadLine());
             Console.Write("Column selection: ");
-            int column = Convert.ToInt32(Console.ReadLine());
-            
+            int column = Convert.ToInt32(Console.ReadLine());            
 
             for (int i = 0; i < a ; i++)
             {     
@@ -108,7 +107,8 @@ namespace Таск_Паша_
                 }
                 Console.WriteLine();
             }
-           
+
+            Console.Write("Press key to ext.");
 
           //Delay
             Console.ReadKey();
