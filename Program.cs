@@ -12,6 +12,9 @@ namespace Таск_Паша_
         static void Main()
         {
              Random rand = new Random();
+
+            Console.WriteLine("Please enter matrix size:");
+
             Console.Write("i = ");
             int a = Convert.ToInt32(Console.ReadLine());
             
@@ -19,117 +22,114 @@ namespace Таск_Паша_
             int b = Convert.ToInt32(Console.ReadLine());
            
             Console.WriteLine();
-            int c = 10;
+            
             //Matrix fill:
             int[,] Array = new int[a,b];
             for (int i = 0; i < a; i++)
             {
                 for (int j = 0; j < b; j++)
                 {
-                    Array[i,j] = c;
+                    Array[i,j] = rand.Next(10, 99);
                 }                
             }
 
+            
+            Console.WriteLine("1) Output. 2) Replacement. 3) Delete. 4) Exit. ");
+           Choices:
+            Console.Write("Your choice: ");
+            string choice = Console.ReadLine();
 
-            Console.WriteLine("---------------Matrix output--------------");
-
-          //Matrix output:
-            for (int i = 0; i < a; i++)
+            switch (choice)
             {
-                for (int j = 0; j < b; j++)
-                {
-                    Console.Write($" {Array[i, j]} ");
-                }
-                Console.WriteLine();
-            }
 
-            Console.WriteLine("---------------Replacement--------------");
-            //Matrix - row and column replacement:
-            for (int i = 0; i < a; i++)
-            {
-                for (int j = 0; j < b; j++)
-                {
-                    if (i == 0)
+                case "Output":
+                    Console.WriteLine("---------------Matrix output--------------");
+
+                    //Matrix output:
+                    for (int i = 0; i < a; i++)
                     {
-                        Console.Write("  1 ");
-                    }   
-                    
-                    else if (j == 0)
-                    {
-                        Console.Write("  1 ");
+                        for (int j = 0; j < b; j++)
+                        {
+                            Console.Write($" {Array[i, j]} ");
+                        }
+                        Console.WriteLine();
                     }
+                    goto Choices;
 
-                    else
+                case "Replacement":
+                    Console.WriteLine("---------------Replacement--------------");
+
+                    //Matrix - row and column replacement:
+                    Console.WriteLine("Which row and column to replacement?");
+                    Console.Write("Row selection: ");
+                    int row = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Column selection: ");
+                    int column = Convert.ToInt32(Console.ReadLine());
+                    for (int i = 0; i < a; i++)
                     {
-                        Console.Write($" {Array[i, j]} ");
-                    } 
-                                       
-                    
-                }
-                Console.WriteLine();
-            }
+                        for (int j = 0; j < b; j++)
+                        {
+                            if (i == row)
+                            {
+                                Console.Write("  1 ");
+                            }
 
-            Console.WriteLine("---------------Delete--------------");
-            //Matrix - Delete row and column:
-            Console.WriteLine("Which row and column to delete?");
-            Console.Write("Row selection: ");
-            int row = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Column selection: ");
-            int column = Convert.ToInt32(Console.ReadLine());            
+                            else if (j == column)
+                            {
+                                Console.Write("  1 ");
+                            }
 
-            for (int i = 0; i < a ; i++)
-            {     
-                if (i==row)
-                {
-                    i++;
-                }
-                for (int j = 0; j < b ; j++)
-                {                    
-                                  
-                    if (j == column)
+                            else
+                            {
+                                Console.Write($" {Array[i, j]} ");
+                            }
+
+
+                        }
+                        Console.WriteLine();
+                    }
+                    goto Choices;
+
+                case "Delete":
+                    Console.WriteLine("---------------Delete--------------");
+                    //Matrix - Delete row and column:
+                    Console.WriteLine("Which row and column to delete?");
+                    Console.Write("Row selection: ");
+                    row = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Column selection: ");
+                    column = Convert.ToInt32(Console.ReadLine());
+
+                    for (int i = 0; i < a; i++)
                     {
-                        j++;
-                    }                    
-                    Console.Write($" {Array[i, j]} ");                    
-                }
-                Console.WriteLine();
+                        if (i == row)
+                        {
+                            continue;
+                        }
+                        for (int j = 0; j < b; j++)
+                        {
+
+                            if (j == column)
+                            {
+                                continue;
+                            }
+                            Console.Write($" {Array[i, j]} ");
+                        }
+                        Console.WriteLine();
+                    }
+                    goto Choices;
+
+                case "Exit":
+                    Console.Write("Please press any key.");
+                    break;
+
+                default:
+                    Console.WriteLine("Enter is not true! Please re-enter.");
+                    goto Choices;
+
             }
-            Console.WriteLine("---------------Random (10-90)--------------");
-            //Matrix - Random values:            
-            for (int i = 0; i < a; i++)
-            {
-                for (int j = 0; j < b; j++)
-                {                    
-                    Array[i, j] = rand.Next(10, 99);
-                    Console.Write($" {Array[i,j]} ");
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine("---------------Random (Delete)--------------");
-
-            for (int i = 0; i < a; i++)
-            {
-                if (i == row)
-                {
-                    i++;
-                }
-                for (int j = 0; j < b; j++)
-                {
-                    if (j == column)
-                    {
-                        j++;
-                    }                    
-                    Console.Write($" {Array[i, j]} ");
-                }
-                Console.WriteLine();
-            }
-
-
-
-            Console.Write("Press key to exit.");
-
-          //Delay
+           
             Console.ReadKey();
+          
         }
 
     }
