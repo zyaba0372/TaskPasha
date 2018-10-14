@@ -31,12 +31,15 @@ namespace Таск_Паша_
                 {
                     Array[i,j] = rand.Next(10, 99);
                 }                
-            }      
-            
+            }
 
+            Console.Write("Your choice: ");
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "Output":
 
-               
-                      Console.WriteLine("---------------Matrix output--------------");
+                    Console.WriteLine("---------------Matrix output--------------");
 
                     //Matrix output:
                     for (int i = 0; i < a; i++)
@@ -47,9 +50,9 @@ namespace Таск_Паша_
                         }
                         Console.WriteLine();
                     }
-                    
+                    break;
 
-                
+                case "Replacement":
                     Console.WriteLine("---------------Replacement--------------");
 
                     //Matrix - row and column replacement:
@@ -81,9 +84,10 @@ namespace Таск_Паша_
                         }
                         Console.WriteLine();
                     }
-                    
 
-                
+                    break;
+
+                case "Delete":
                     Console.WriteLine("---------------Delete--------------");
                     //Matrix - Delete row and column:
                     Console.WriteLine("Which row and column to delete?");
@@ -109,10 +113,9 @@ namespace Таск_Паша_
                         }
                         Console.WriteLine();
                     }
-                    
-               
-            
-           
+                    break;
+            }
+
             Console.ReadKey();
           
         }
