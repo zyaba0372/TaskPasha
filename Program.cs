@@ -26,7 +26,7 @@ namespace Таск_Паша_
             {
                 for (int j = 0; j < b; j++)
                 {
-                    Array[i,j] = c++;
+                    Array[i,j] = c;
                 }                
             }
 
@@ -95,9 +95,7 @@ namespace Таск_Паша_
                 Console.WriteLine();
             }
             Console.WriteLine("---------------Random (10-90)--------------");
-            //Matrix - Random values:
-            
-            
+            //Matrix - Random values:            
             for (int i = 0; i < a; i++)
             {
                 for (int j = 0; j < b; j++)
@@ -107,8 +105,28 @@ namespace Таск_Паша_
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine("---------------Random (Delete)--------------");
 
-            Console.Write("Press key to ext.");
+            for (int i = 0; i < a; i++)
+            {
+                if (i == row)
+                {
+                    i++;
+                }
+                for (int j = 0; j < b; j++)
+                {
+                    if (j == column)
+                    {
+                        j++;
+                    }                    
+                    Console.Write($" {Array[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+
+
+
+            Console.Write("Press key to exit.");
 
           //Delay
             Console.ReadKey();
